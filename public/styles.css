@@ -1,0 +1,29 @@
+#tasks{    
+    border-right: 2px solid green;
+    border-bottom: 2px solid green;
+    border-left: 2px solid green;
+}
+#delete :hover{
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 200;
+    padding: 0.1em 0.1em;
+    background: red;
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid red;
+    outline: 1px solid;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  #update :hover{
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 200;
+    padding: 0.1em 0.1em;
+    background: orange;
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid orange;    
+    outline: 1px solid;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  }
