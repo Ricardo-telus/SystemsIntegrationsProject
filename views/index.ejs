@@ -41,6 +41,7 @@
     <header class="p-2 bg-success text-white bg-opacity-75">
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center">
+          <img src="./ava.jpeg" class="img-thumbnail" alt="..." id="img">
           <h1>DSU TO DO</h1>
         </div>
       </div>
@@ -51,100 +52,13 @@
         <div class="container">
           <div id="compTask" class="row">
             <div id="tasks" class="col-10 offset-1 d-flex justify-content-between">
-                <div>
-                  <input type="checkbox">
-                </div>
-                  <p>asdadasdasd</p>
-                <div>
-                  <button id="update" class="btn me-3"><i class="fa fa-pencil"></i></button>
-                  <button id="delete" class="btn"><i class="fa fa-trash"></i></button>
-                </div>
+                  <h5>add a task...</h5>
             </div>
-            <div id="tasks" class="col-10 offset-1 d-flex justify-content-between">
-              <div>
-                <input type="checkbox">
-              </div>
-                <p class="text-decoration-line-through">asdadasdasd</p>
-              <div>
-                <button id="update" class="btn me-3" disabled><i class="fa fa-pencil"></i></button>
-                <button id="delete" class="btn"><i class="fa fa-trash"></i></button>
-              </div>
-          </div>
           </div>
         </div>
       </article>
-      <div class="container my-5">
-        <div
-          id="dsu-todo-instructions-carousel"
-          class="carousel carousel-dark slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-indicators">
-            <% content.map((cardContent, index) => { %>
-            <button
-              type="button"
-              data-bs-target="#dsu-todo-instructions-carousel"
-              <% if(cardContent.active) { %> 
-              class="active"
-              aria-current="true"
-              <% } %>
-              data-bs-slide-to="<%= index %>"
-              aria-label="Slide <%= index + 1 %>"
-              title="Slide <%= index + 1 %>"
-            ></button>
-            <% }); %>
-          </div>
-          <div class="carousel-inner">
-            <% content.map((cardContent) => { %>
-              <% if(cardContent.active) { %> 
-              <div class="carousel-item active">
-              <% } else { %>
-              <div class="carousel-item">
-              <% } %>
-                <div class="card mb-5 border-light">
-                  <div
-                    class="
-                      d-flex
-                      flex-wrap
-                      align-items-center
-                      justify-content-center
-                      my-3
-                    "
-                  >
-                    <img src="<%= cardContent.imgSrc %> " class="d-block" alt="..." />
-                  </div>
-                  <div class="card-body" z-index="-1">
-                    <h5 class="card-title"><%= cardContent.cardTitle %></h5>
-                    <p class="card-text">
-                      <%- cardContent.cardText %>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            <% }); %>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#dsu-todo-instructions-carousel"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#dsu-todo-instructions-carousel"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
     </main>
-    <div id="addTasks" class="container bg-success text-white bg-opacity-75">
+    <div id="addTasks" class="container bg-success text-white bg-opacity-75 fixed-bottom">
       <div class="row fixed-botton">
         <div class="col-12 my-3 d-flex justify-content-evenly">
           <input type="text" placeholder="Add a task" class="form-control w-75 text-center" id="toDo">

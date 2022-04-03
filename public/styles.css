@@ -27,3 +27,8 @@
     outline: 1px solid;
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
   }
+  #img{
+    width: 4em;
+    height: 4em;
+    border-radius: 25px;
+  }

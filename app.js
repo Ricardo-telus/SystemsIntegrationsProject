@@ -19,25 +19,58 @@ app.get("/data", (req, res) => {
   res.json((tasks))
 });
 app.post("/data", (req, res) => {  
-  tasks=(req.body)
-  res.json(tasks)  
-  console.log(tasks)
-  console.log("POST")  
+  try {
+    addTask(req.body)
+    res.json({response:"successfully add"})
+    console.log("POST")
+  } catch (error) {
+    console.log(error)
+    res.json({response:"something bad happen"})
+  }  
 });
-app.put("/data", (req, res) => {  
-  tasks=(req.body)
-  res.json(tasks)  
-  console.log(tasks)
-  console.log("PUT")   
+app.put("/data", (req, res) => { 
+  try {
+    updateTask(req.body)
+    res.json({response:"Updated successfully"})  
+    console.log("PUT")
+  } catch (error) {
+    console.log(error)
+    res.json({response:"something bad happen"})
+  } 
 });
 app.delete("/data", (req, res) => {  
-  tasks=(req.body)
-  res.json(tasks)    
-  console.log(tasks)
-  console.log("DELETE") 
+  try {
+    deleteData(req.body.data)
+    console.log("DELETE")  
+    res.json({response:"Deleted successfully"})    
+  } catch (error) {
+    console.log(error)
+    res.json({response:"something bad happen"})  
+  }
 });
-
 // Starting server.
 server.listen(3030, () => {
   console.log("Listening on port 3030...");
 });
+
+
+//metodos....
+function addTask(newData){ 
+    tasks.push(... newData)
+    console.log(tasks)
+}
+
+function deleteData(data){
+  let tempData=[]
+  tasks.map(element=>(parseInt(element.id)!==parseInt(data))&&(tempData.push(element)))
+  tasks=tempData
+  console.log(tasks)
+}
+function updateTask(data){
+  let tempData=[]
+  tasks.map(element=>(parseInt(element.id)===parseInt(data.id))?
+    (tempData.push(data))
+    :(tempData.push(element)))
+  tasks=tempData
+  console.log(tasks)
+}
