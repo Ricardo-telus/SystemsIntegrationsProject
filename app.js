@@ -25,6 +25,7 @@ app.post("/data", (req, res) => {
     console.log("POST")
   } catch (error) {
     console.log(error)
+    res.status(400);
     res.json({response:"something bad happen"})
   }  
 });
@@ -35,16 +36,18 @@ app.put("/data", (req, res) => {
     console.log("PUT")
   } catch (error) {
     console.log(error)
+    res.status(400);
     res.json({response:"something bad happen"})
   } 
 });
 app.delete("/data", (req, res) => {  
   try {
-    deleteData(req.body.data)
+    deleteData(req.body.data)    
     console.log("DELETE")  
     res.json({response:"Deleted successfully"})    
   } catch (error) {
     console.log(error)
+    res.status(400);
     res.json({response:"something bad happen"})  
   }
 });

@@ -37,6 +37,8 @@ function sendData(data, metodo, allData){
   Http.onreadystatechange = function(){
     if (this.readyState==4 && this.status==200) {
       console.log(Http.responseText)  
+    }else if(this.readyState==4 && this.status==400){
+      alert("Something bad happen in the server")
     }
   }
   paintData(allData)
